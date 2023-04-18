@@ -1,0 +1,41 @@
+.pageIntro {
+	@include grid-placement;
+	position: relative;
+	background-color: color(gray, 400);
+	isolation: isolate;
+
+	&::before,
+	&::after {
+		content: '';
+		background-color: color(cream, 100);
+		z-index: -1;
+	}
+
+	&::before {
+		@include absolute(0, 50%, 0, 0);
+		border-radius: 0 32px 0 0;
+	}
+
+	&::after {
+		@include absolute(0, 0, 0, 50%);
+		border-radius: 32px 0 0 0;
+	}
+
+	.inner {
+		@include component-padding;
+		font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+		text-align: center;
+		margin-top: 24px;
+
+		@include from(12) {
+			max-width: 70%;
+			margin: 0 auto;
+		}
+	}
+
+	.sauce-drip-ornament {
+		@include absolute(30px, null, null, calc(50% - 11px));
+		width: 22px;
+		z-index: 1;
+	}
+}

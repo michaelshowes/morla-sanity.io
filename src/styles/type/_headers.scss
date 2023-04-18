@@ -1,0 +1,64 @@
+// Headers
+@use './settings' as *;
+
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: green;
+  font-family: $header-font;
+  @include font-weight(medium);
+  margin: 0;
+  // margins scoped to wysiwyg OR determined by component context
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.wysiwyg-content :where(h1, h2, h3, h4, h5, h6) {
+  margin-top: 45px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.h1,
+.wysiwyg-content h1 {
+  @extend %__heading-1;
+}
+
+.h2,
+.wysiwyg-content h2 {
+  @extend %__heading-2;
+}
+
+.h3,
+.wysiwyg-content h3 {
+  @extend %__heading-3;
+}
+
+.h4,
+.wysiwyg-content h4 {
+  @extend %__heading-4;
+}
+
+.h5,
+.wysiwyg-content h5 {
+  @extend %__heading-5;
+}
+
+.h6,
+.wysiwyg-content h6 {
+  @extend %__heading-6;
+}

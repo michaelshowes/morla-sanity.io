@@ -1,0 +1,31 @@
+// Eyebrow Component
+
+.eyebrow {
+	@include grid-placement;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: $brothers;
+	font-size: 0.875rem;
+	letter-spacing: 0.07em;
+	text-transform: lowercase;
+	width: max-content;
+	margin: 0 auto;
+
+	@include from(6) {
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: flex-end;
+		width: unset;
+	}
+
+	svg {
+		width: 32px;
+		stroke: color(yellow, 100);
+		margin: 8px 0 0;
+
+		@include from(6) {
+			margin: 0 10px 0 0;
+		}
+	}
+}

@@ -1,0 +1,95 @@
+// Accordion Component
+
+.accordion {
+	@include grid-placement;
+	width: 100%;
+	margin: 0 auto 80px;
+
+	@include from(14) {
+		max-width: 70%;
+	}
+
+	h2 {
+		font-size: clamp(1.25rem, 3.2vw, 2rem) !important;
+		margin-bottom: 36px;
+	}
+
+	.item {
+		border-bottom: 1;
+		border-bottom: 2px solid color(yellow, 200);
+
+		&:first-child {
+			border-top: 2px solid color(yellow, 200);
+		}
+
+		button {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			background: none;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1.4px;
+			width: 100%;
+			padding: 24px 32px;
+			border: 0;
+			transition: 0.1s $te;
+
+			&:hover {
+				.icon {
+					border-color: rgba(color(yellow, 200), 0);
+					background-color: color(orange, 100);
+
+					&:before {
+						opacity: 1;
+					}
+
+					svg {
+						color: white;
+					}
+				}
+			}
+
+			.icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 40px;
+				height: 40px;
+				margin-right: 32px;
+				border: 2px solid color(yellow, 100);
+				border-radius: 50%;
+				transition: $ts $te;
+
+				svg {
+					color: black;
+					transition: $ts $te;
+				}
+			}
+
+			h3 {
+				font-family: $acumin;
+				line-height: 1.2;
+				font-size: clamp(1.375rem, 2.6vw, 1.625rem) !important; 
+			}
+		}
+
+		&.active {
+			button {
+				svg {
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		.content {
+			overflow: hidden;
+			transition: height 0.2s $te;
+
+			p {
+				padding: 20px;
+				margin: 0;
+			}
+		}
+	}
+}

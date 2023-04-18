@@ -1,0 +1,79 @@
+$slices: (
+	0: 0px,
+	1: 100px,
+	2: 200px,
+	3: 360px,
+	4: 400px,
+	5: 500px,
+	6: 600px,
+	7: 768px,
+	8: 800px,
+	9: 900px,
+	10: 1000px,
+	11: 1100px,
+	12: 1200px,
+	13: 1300px,
+	14: 1400px,
+	15: 1500px,
+	16: 1600px,
+	17: 1700px,
+	18: 1800px,
+	19: 1920px,
+	20: 2000px
+);
+
+/////////////////////////////////////////////////////////////
+// GLOBAL TYPOGRAPHY
+/////////////////////////////////////////////////////////////
+$arial: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$condensed-fallback: Impact, sans-serif;
+$gibson: 'canada-type-gibson';
+$acumin: 'acumin-pro-extra-condensed';
+$brothers: 'brothers';
+
+$body-font: $gibson, $arial;
+$header-font: $gibson, $arial;
+$accent-font: $brothers, $arial;
+
+$body-color: color(gray, 300);
+
+$base-font-size: 16px;
+$clamp-scale-basis: 600px;
+
+// letter spacing
+$letter-spacing-0: 0.01em;
+// 1%  (e.g., Gibson body)
+
+$letter-spacing-1: 0.05em;
+// 5%  (e.g., Gibson headers display)
+
+$letter-spacing-2: 0.075em;
+// 7.5% (e.g., Acumin ExtraCondensed nav text, quote attribution)
+
+$letter-spacing-3: 0.1em;
+// 10% (e.g., Gibson headers & Brothers eyebrows)
+// NOTE: streamlined letter-spacing for Acumin ExtraCondensed
+// since there were like 4 variations in design for basically all the same style
+
+$letter-spacing-4: 0.13em; // 13% (e.g., Acumin ExtraCondensed buttons)
+
+// Layout
+$component-margin: 120px;
+$outer-max-width: 1900px;
+$inner-max-width: 1500px;
+$tablet-break: 7;
+$desktop-break: 12;
+
+// radius
+$border-radius: 3px;
+
+/////////////////////////////////////////////////////////////
+// GLOBAL TRANSITIONS
+/////////////////////////////////////////////////////////////
+$ts: 0.25s;
+$ts-md: 0.5s;
+$ts-long: 0.65s;
+$ts-xlong: 0.85s;
+$te: ease-in-out;
+$img-ts-te: $ts-xlong $te, $ts-xlong filter, $ts-xlong opacity;
+$ts-body-anim: 1.85s;

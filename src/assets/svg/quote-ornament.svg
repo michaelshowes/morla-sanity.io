@@ -1,0 +1,7 @@
+
+<svg class="svg-quote svg-use-quote-ornament" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <g id="svg-quote-ornament">
+    <rect fill="inherit" stroke="inherit" stroke-miterlimit="4" stroke-width="2px" x="13.5" y="13.5" width="53" height="53" transform="translate(-16.569 40) rotate(-45)"/>
+    <path fill="#282a2a" stroke="none" d="M41.132,49.705c4.752-.18,9.288-4.536,9.288-9.144v-7.452h-9.684v7.452h5.04c-.468,3.204-2.088,4.788-4.644,5.112v4.032Zm-11.88,0c4.752-.18,9.288-4.536,9.288-9.144v-7.452h-9.684v7.452h5.04c-.468,3.204-2.088,4.788-4.644,5.112v4.032Z"/>
+  </g>
+</svg>

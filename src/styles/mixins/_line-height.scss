@@ -1,0 +1,5 @@
+@use 'sass:math'; // Line Height
+
+@mixin line-height($leading, $font-size) {
+	line-height: decimal-round((math.div($leading, $font-size)), 2);
+}

@@ -1,0 +1,15 @@
+// PageContainer Component
+
+.pageContainer {
+	display: grid;
+	grid-template: auto 1fr auto / minmax(0, 1fr);
+	grid-template-areas: 'header' 'main' 'footer';
+	position: relative;
+	min-height: 100%;
+	background: color(cream, 100);
+
+	@include from(19) {
+		@include content-constraint(1920px);
+		box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+	}
+}

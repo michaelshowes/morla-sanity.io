@@ -1,0 +1,32 @@
+$colors: (
+	white: (
+		100: #fff
+	),
+	black: (
+		100: #000
+	),
+	gray: (
+		100: #f4f7fb,
+		200: #e5e9ee,
+		300: #333333,
+		400: #1e1e1e
+	),
+	cream: (
+		100: #fff6e6
+	),
+	yellow: (
+		100: #ffb256,
+		200: #ff9d42
+	),
+	orange: (
+		100: #ef5322
+	),
+	red: (
+		100: #cf202e
+	)
+);
+
+// FUNCTION
+@function color($color, $tone: 1) {
+	@return map-get(map-get($colors, $color), $tone);
+}

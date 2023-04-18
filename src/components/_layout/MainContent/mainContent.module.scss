@@ -1,0 +1,10 @@
+// MainContent Component
+
+.mainContent {
+	grid-area: main;
+
+	// NOTE: ALL direct descendants of this container MUST have a grid-column declared
+	.gridContainer {
+		@extend %grid-columns;
+	}
+}

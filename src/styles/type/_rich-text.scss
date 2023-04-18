@@ -1,0 +1,238 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	&.rt {
+		color: color(gray, 300);
+		font-family: $gibson;
+		line-height: 1;
+		text-transform: uppercase;
+		-webkit-font-smoothing: antialiased;
+		margin-bottom: 24px;
+	}
+}
+
+h1 {
+	&.rt {
+		font-size: clamp(2.125rem, 5vw, 4.125rem);
+		@include line-height(66, 66);
+	}
+}
+
+h2 {
+	&.rt {
+		@include line-height(54, 50);
+		font-size: clamp(1.75rem, 5vw, 3.125rem);
+	}
+}
+
+h3 {
+	&.rt {
+		@include line-height(52, 44);
+		font-size: clamp(1.5rem, 4.4vw, 2.75rem);
+	}
+}
+
+h4 {
+	&.rt {
+		@include line-height(44, 38);
+		font-size: clamp(22px, 3.8vw, 38px);
+	}
+}
+
+h5 {
+	&.rt {
+		@include line-height(38, 32);
+		font-size: clamp(1.25rem, 3.2vw, 2rem);
+	}
+}
+
+p,
+ul,
+ol {
+	&.rt {
+		font-family: $gibson;
+		@include line-height(30, 18);
+		font-size: clamp(1rem, 2vw, 1.125rem);
+	}
+}
+
+ul {
+	&.rt-special {
+		li {
+			position: relative;
+
+			&::before {
+				content: '✔';
+				color: orange;
+				font-weight: bold;
+				margin-right: 6px;
+				font-size: 0.8rem;
+			}
+		}
+	}
+}
+
+p {
+	&.rt {
+		margin-bottom: 32px;
+		line-height: 1.7;
+
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+
+		&.large {
+			font-size: clamp(1.125rem, 2.2vw, 1.375rem);
+			@include line-height(34, 22);
+		}
+
+		&.-lite {
+			margin-bottom: 24px;
+		}
+	}
+}
+
+ol,
+ul {
+	&.rt {
+		position: relative;
+		list-style-position: outside;
+		padding-left: 0;
+		margin-bottom: 24px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		li {
+			@include line-height(30, 18);
+			font-size: clamp(1rem, 2vw, 1.125rem);
+			margin: 0 0 16px;
+			list-style: none;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			ul,
+			ol {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+ul {
+	&.rt {
+		li {
+			list-style: none;
+			position: relative;
+			padding-left: 24px;
+
+			&::before {
+				color: color(red, 100);
+			}
+		}
+	}
+}
+
+ul {
+	&.rt {
+		& > li {
+			&::before {
+				@include absolute(0.3em, null, null, 0);
+				content: '\25CF';
+				font-size: 12px;
+				@include font-weight(extra-bold);
+			}
+		}
+	}
+}
+
+blockquote {
+	&.rt {
+		padding: 0 0 0 32px;
+		margin: 0 0 32px;
+		border-top: 2px solid color(yellow, 100);
+		border-bottom: 2px solid color(yellow, 100);
+	}
+}
+
+hr {
+	&.rt {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		height: 30px;
+		background-color: transparent;
+		border: 0;
+		margin: 32px auto;
+		clear: both;
+
+		// ornament endcaps
+		&::before {
+			content: '';
+			background-image: url('../../assets/svg/hr-endcap-left.svg'),
+				url('../../assets/svg/hr-endcap-right.svg');
+			background-position: left, right;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 30px;
+			display: inline-block;
+			position: absolute;
+		}
+
+		// center line and ornament
+		&::after {
+			@include absolute(null, null, null, 50%);
+			content: '';
+			width: calc(100% - 80px);
+			height: 100%;
+			transform: translateX(-50%);
+			background-image: url('../../assets/svg/hr-center.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	}
+}
+
+a {
+	&.rt {
+		&:not([class^='btn']):not([class='media-link']) {
+			box-shadow: inset 0 -2px 0 0 color(red, 100);
+			padding-bottom: 3px;
+			color: inherit;
+			transition: $ts $te;
+			position: relative;
+
+			@include hover {
+				color: color(red, 100);
+				box-shadow: inset 0 -4px 0 0 color(red, 100);
+			}
+
+			// if context is that it's on a dark gray BG, change contrast
+			[data-bg-color-top='gray-s1'] & {
+				// text-decoration: 1px underline wavy primary-color(red);
+				box-shadow: inset 0 -2px 0 0 color(orange, 100);
+
+				@include hover {
+					color: color(orange, 100);
+					box-shadow: inset 0 -4px 0 0 color(orange, 100);
+				}
+			}
+		}
+
+		// any <a> with a btn-** class
+		&[class^='btn'] {
+			margin-bottom: 16px;
+
+			&:not(:last-child) {
+				margin-right: 24px;
+			}
+		}
+	}
+}

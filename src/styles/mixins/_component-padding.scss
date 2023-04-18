@@ -1,0 +1,41 @@
+@use '../mixins/breakpoints' as *;
+
+@mixin component-padding($top: true, $bottom: true) {
+	@if ($top == true) {
+		padding-top: 56px;
+	}
+
+	@if ($bottom == true) {
+		padding-bottom: 56px;
+	}
+
+	@include from(7) {
+		@if ($top == true) {
+			padding-top: 72px;
+		}
+
+		@if ($bottom == true) {
+			padding-bottom: 72px;
+		}
+	}
+
+	@include from(10) {
+		@if ($top == true) {
+			padding-top: 96px;
+		}
+
+		@if ($bottom == true) {
+			padding-bottom: 96px;
+		}
+	}
+}
+
+// @mixin component-padding-sm($top: true, $bottom: true) {
+// 	@if ($top == true) {
+// 		padding-top: $component-margin-sm;
+// 	}
+
+// 	@if ($bottom == true) {
+// 		padding-bottom: $component-margin-sm;
+// 	}
+// }

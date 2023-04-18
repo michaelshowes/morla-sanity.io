@@ -1,0 +1,99 @@
+// FiftyFifty Component
+
+.fiftyFifty {
+	@include grid-placement;
+	padding: 20px;
+	width: 100%;
+	max-height: 590px;
+	margin-bottom: 80px;
+
+	[class^='eyebrow'] {
+		margin-bottom: 16px;
+	}
+
+	.inner {
+		position: relative;
+		width: 100%;
+		max-height: 590px;
+
+		@include from(7) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&.imageRight {
+			@include from(7) {
+				flex-direction: row-reverse;
+			}
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-bottom: 16px;
+		}
+
+		button {
+			margin-bottom: 30px;
+		}
+
+		.spacer {
+			display: none;
+			width: 80px;
+
+			@include from(7) {
+				display: block;
+			}
+
+			@include from(10) {
+				width: 150px;
+			}
+
+			&::before {
+				@include absolute(0, 50%, 0, null);
+				content: '';
+				background-color: color(yellow, 100);
+				width: 2px;
+				transform: tranlsateX(-50%);
+			}
+		}
+
+		.imageCol,
+		.contentCol {
+			max-width: 590px;
+			flex: 1;
+		}
+
+		.imageCol {
+			max-width: 200px;
+			margin: 0 auto 32px;
+
+			@include from(7) {
+				max-width: 590px;
+				margin: 0;
+			}
+
+			img {
+				max-height: 590px;
+			}
+		}
+
+		.contentCol {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			margin: 0 auto;
+
+			@include from(7) {
+				display: block;
+				text-align: unset;
+				margin: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,135 @@
+// Footer Component
+
+.footer {
+	@extend %grid-columns;
+	position: relative;
+	isolation: isolate;
+	grid-area: footer;
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		top: 0;
+		bottom: 0;
+		background-color: color(gray, 400);
+		width: 50%;
+		z-index: -1;
+	}
+
+	&::before {
+		left: 0;
+		border-radius: 0 32px 0 0;
+	}
+
+	&::after {
+		right: 0;
+		border-radius: 32px 0 0;
+	}
+
+	.inner {
+		@include grid-placement;
+		padding: 56px 0;
+
+		@include from(7) {
+			padding: 72px 0;
+		}
+
+		@include from(10) {
+			padding: 96px 0;
+		}
+	}
+
+	.cols {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 280px;
+		margin: 0 auto;
+
+		@include from(7) {
+			max-width: unset;
+			margin: 0;
+		}
+
+		& > * {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			align-content: center;
+			flex-flow: row nowrap;
+			flex: 100%;
+			position: relative;
+
+			@include from(7) {
+				flex: 1;
+			}
+		}
+
+		.left,
+		.right {
+			border-top: 1px solid color(gray, 300);
+			padding-top: 24px;
+			margin-top: 24px;
+
+			@include from(7) {
+				border-top: 0;
+				padding-top: 0;
+				margin-top: 0;
+			}
+		}
+
+		.left {
+			@include from(7) {
+				justify-content: flex-start;
+				padding-right: calc((min(100vw, 1900px) / 29) * 1);
+			}
+
+			svg {
+				width: 100%;
+				max-width: 222px;
+
+				@include from(7) {
+					max-width: 258px;
+				}
+			}
+		}
+
+		.center {
+			order: -1;
+			margin: 0 auto;
+
+			@include from(7) {
+				order: 0;
+			}
+
+			svg {
+				width: 100%;
+				max-width: 132px;
+
+				@include from(7) {
+					max-width: 172px;
+				}
+			}
+		}
+
+		.right {
+			@include from(7) {
+				justify-content: flex-end;
+				padding-left: calc((min(100vw, 1900px) / 29) * 1);
+			}
+
+			p {
+				color: white;
+				font-family: $gibson;
+				font-size: clamp(0.5625rem, 1.1vw, 0.8125rem);
+				font-weight: 700;
+				line-height: 1.4;
+				text-align: right;
+				letter-spacing: 0.13em;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

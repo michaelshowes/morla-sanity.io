@@ -1,0 +1,18 @@
+// Blockquotes
+
+blockquote {
+  // any child of blockquote should have same appearance
+  &,
+  > p,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    @extend %__heading-3;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
