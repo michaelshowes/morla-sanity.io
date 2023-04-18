@@ -17,6 +17,7 @@ import imageArray from './components/imageArray';
 import link from './components/link';
 import testimonial from './components/blocks/testimonial';
 import fields from './fields';
+import pet from './pet';
 
 export const schemaTypes = [
 	page,
@@ -35,5 +36,6 @@ export const schemaTypes = [
 	pageIntro,
 	testimonial,
 	accordion,
-	fields
+	fields,
+	pet
 ];
