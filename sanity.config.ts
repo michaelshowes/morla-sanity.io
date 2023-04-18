@@ -15,7 +15,7 @@ const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
 
 export default defineConfig({
-	basePath: '/admin',
+	basePath: '/weltall',
 	name: 'morla-sanity',
 	title: 'Morla',
 
@@ -32,11 +32,11 @@ export default defineConfig({
 		media(),
 		imageHotspotArrayPlugin(),
 		pexelsImageAsset({
-			API_KEY: 'X3XnB0JMR3nF5LmywmqB7icVIzDEhqB4lVOwvr0KIbBG9QBIAx9FdNfW'
+			API_KEY: `${process.env.SANITY_PEXELS_API_KEY}`
 		}),
 		unsplashImageAsset(),
 		googleMapsInput({
-			apiKey: `AIzaSyDz-ol-9ZF4ILnPdF9mmHZWtJp127fT_BY`
+			apiKey: 'AIzaSyDz-ol-9ZF4ILnPdF9mmHZWtJp127fT_BY'
 		}),
 		colorInput()
 	],
