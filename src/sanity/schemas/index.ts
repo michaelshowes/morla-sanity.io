@@ -18,6 +18,7 @@ import link from './components/link';
 import testimonial from './components/blocks/testimonial';
 import fields from './fields';
 import pet from './pet';
+import wysiwyg from './wysiwyg';
 
 export const schemaTypes = [
 	page,
@@ -37,5 +38,6 @@ export const schemaTypes = [
 	testimonial,
 	accordion,
 	fields,
-	pet
+	pet,
+	wysiwyg
 ];
